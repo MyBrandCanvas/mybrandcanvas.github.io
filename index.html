@@ -3222,6 +3222,28 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 </script>
 <script>
 (function() {
+  function openMenu(nav) {
+    document.body.classList.add('uicore-mobile-nav-show', 'uicore-overflow-hidden');
+    document.documentElement.classList.add('uicore-overflow-hidden');
+    nav.style.opacity = '1';
+    nav.style.pointerEvents = 'all';
+    nav.style.transition = 'opacity 0.2s ease';
+    var items = nav.querySelectorAll('.uicore-menu-container .menu-item');
+    items.forEach(function(item, i) {
+      setTimeout(function() { item.classList.add('uicore-visible'); }, i * 60);
+    });
+  }
+
+  function closeMenu(nav) {
+    document.body.classList.remove('uicore-mobile-nav-show', 'uicore-overflow-hidden');
+    document.documentElement.classList.remove('uicore-overflow-hidden');
+    nav.style.opacity = '0';
+    nav.style.pointerEvents = 'none';
+    nav.querySelectorAll('.menu-item').forEach(function(item) {
+      item.classList.remove('uicore-visible');
+    });
+  }
+
   function initHamburger() {
     var toggles = document.querySelectorAll('.uicore-toggle.uicore-ham');
     var nav = document.querySelector('.uicore-navigation-wrapper');
@@ -3230,29 +3252,12 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
     toggles.forEach(function(toggle) {
       toggle.addEventListener('click', function(e) {
         e.stopPropagation();
-        var isOpen = document.body.classList.contains('uicore-mobile-nav-show');
-        if (isOpen) {
-          document.body.classList.remove('uicore-mobile-nav-show', 'uicore-overflow-hidden');
-          document.documentElement.classList.remove('uicore-overflow-hidden');
-          nav.style.opacity = '0';
-          nav.style.pointerEvents = 'none';
-        } else {
-          document.body.classList.add('uicore-mobile-nav-show', 'uicore-overflow-hidden');
-          document.documentElement.classList.add('uicore-overflow-hidden');
-          nav.style.opacity = '1';
-          nav.style.pointerEvents = 'all';
-          nav.style.transition = 'opacity 0.2s ease';
-        }
+        document.body.classList.contains('uicore-mobile-nav-show') ? closeMenu(nav) : openMenu(nav);
       });
     });
 
     nav.addEventListener('click', function(e) {
-      if (e.target === nav) {
-        document.body.classList.remove('uicore-mobile-nav-show', 'uicore-overflow-hidden');
-        document.documentElement.classList.remove('uicore-overflow-hidden');
-        nav.style.opacity = '0';
-        nav.style.pointerEvents = 'none';
-      }
+      if (e.target === nav) closeMenu(nav);
     });
   }
 

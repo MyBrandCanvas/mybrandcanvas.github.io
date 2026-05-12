@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Pricing - MyBrandCanvas</title>
+<meta name="description" content="MyBrandCanvas pricing plans — Free, Silver, Gold, and Platinum. Choose the right plan to grow your brand with Google Business Setup, videos, blogs, websites, and AI avatars."/>
+<link rel="canonical" href="https://mybrandcanvas.com/pricing/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #FFFFFF;
+  color: #36394A;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; transition: color 0.3s; }
+img { max-width: 100%; height: auto; }
+
+/* ===== CSS VARIABLES (brand) ===== */
+:root {
+  --primary: #8636F8;
+  --secondary: #F020B3;
+  --accent: #FF9421;
+  --headline: #0D0D12;
+  --body-color: #36394A;
+  --dark: #060317;
+  --light: #F1F4F9;
+  --white: #FFFFFF;
+  --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+/* ===== HEADER / NAV (matches main site) ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.site-header::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+  opacity: 0.5;
+}
+.header-inner {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 72px;
+}
+.logo img { height: 36px; }
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+.nav-menu { display: flex; gap: 0; list-style: none; align-items: center; }
+.nav-menu li a {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  padding: 8px 18px;
+  color: var(--headline);
+  transition: color 0.3s;
+}
+.nav-menu li a:hover {
+  color: var(--primary);
+}
+.nav-menu .has-submenu { position: relative; }
+.nav-menu .has-submenu .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 8px 0;
+  min-width: 240px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+}
+.nav-menu .has-submenu:hover .submenu { display: block; }
+.nav-menu .submenu li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: var(--body-color);
+}
+.nav-menu .submenu li a:hover { background: var(--light); color: var(--primary); }
+.header-cta {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  font-family: 'Dosis', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 28px;
+  border-radius: 24px;
+  margin-left: 12px;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+.header-cta:hover { opacity: 0.9; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--headline); border-radius: 2px; transition: 0.3s; }
+
+/* ===== HERO SECTION ===== */
+.hero {
+  text-align: center;
+  padding: 80px 24px 50px;
+  background: var(--light);
+}
+.hero h1 {
+  font-family: 'Dosis', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  color: var(--headline);
+}
+.hero h1 .gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p {
+  font-size: 1.1rem;
+  color: var(--body-color);
+  opacity: 0.7;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ===== PRICING CARDS SECTION ===== */
+.pricing-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.pricing-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.35s ease;
+}
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(134, 54, 248, 0.1);
+  border-color: rgba(134, 54, 248, 0.2);
+}
+.pricing-card.featured {
+  border-color: var(--primary);
+  box-shadow: 0 8px 32px rgba(134, 54, 248, 0.12);
+}
+.pricing-card.featured::before {
+  content: 'Most Popular';
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: #fff;
+  font-family: 'Dosis', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 20px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.card-tier {
+  font-family: 'Dosis', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+.card-name {
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--headline);
+  margin-bottom: 6px;
+}
+.card-price {
+  font-family: 'Dosis', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--headline);
+  margin-bottom: 4px;
+}
+.card-price .currency { font-size: 1.2rem; vertical-align: super; opacity: 0.6; }
+.card-price .period { font-size: 0.85rem; font-weight: 500; opacity: 0.45; }
+.card-desc {
+  font-size: 0.85rem;
+  color: var(--body-color);
+  opacity: 0.6;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+.card-features {
+  list-style: none;
+  flex: 1;
+  margin-bottom: 28px;
+}
+.card-features li {
+  font-size: 0.88rem;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--body-color);
+}
+.card-features li:last-child { border-bottom: none; }
+.card-features .check {
+  color: #32d296;
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.card-features .cross {
+  color: rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.card-features li.disabled { color: rgba(0, 0, 0, 0.25); }
+.card-btn {
+  display: block;
+  text-align: center;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: all 0.3s;
+  border: 2px solid rgba(134, 54, 248, 0.25);
+  color: var(--primary);
+  background: transparent;
+}
+.card-btn:hover {
+  background: rgba(134, 54, 248, 0.06);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+.pricing-card.featured .card-btn {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.pricing-card.featured .card-btn:hover {
+  opacity: 0.9;
+  box-shadow: 0 6px 24px rgba(134, 54, 248, 0.25);
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+  text-align: center;
+  padding: 60px 24px 80px;
+}
+.cta-box {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--light);
+  border-radius: 20px;
+  padding: 56px 40px;
+}
+.cta-box h2 {
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--headline);
+}
+.cta-box p {
+  font-size: 1rem;
+  color: var(--body-color);
+  opacity: 0.65;
+  margin-bottom: 32px;
+}
+.cta-btn {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 36px;
+  border-radius: 24px;
+  transition: all 0.3s;
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(134, 54, 248, 0.25);
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 40px 24px 32px;
+}
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-copy {
+  font-size: 0.85rem;
+  color: var(--body-color);
+  opacity: 0.5;
+}
+.footer-links { display: flex; gap: 24px; list-style: none; }
+.footer-links a {
+  font-size: 0.85rem;
+  color: var(--body-color);
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+.footer-links a:hover { opacity: 1; color: var(--primary); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .pricing-cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .nav-menu { display: none; }
+  .nav-right { display: none; }
+  .hamburger { display: flex; }
+  .nav-menu.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+  .nav-menu .has-submenu .submenu {
+    position: static;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    padding-left: 16px;
+    display: none;
+  }
+  .nav-menu .has-submenu.open .submenu { display: block; }
+  .pricing-cards { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  .hero { padding: 60px 24px 40px; }
+  .cta-box { padding: 40px 24px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="../index.html">
+      <img src="../wp-content/uploads/mybrandcanvas-logo.svg" alt="MyBrandCanvas"/>
+    </a>
+    <div class="nav-right">
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html">Home</a></li>
+          <li class="has-submenu">
+            <a href="#">Services ›</a>
+            <ul class="submenu">
+              <li><a href="../digital-marketing/index.html">Digital Marketing</a></li>
+              <li><a href="../performance-marketing/index.html">Performance Marketing</a></li>
+              <li><a href="../brand-growth-launch/index.html">Brand Growth &amp; Launch</a></li>
+              <li><a href="../influencer-marketing/index.html">Influencer Marketing</a></li>
+              <li><a href="../advertising-pr/index.html">Advertising &amp; PR</a></li>
+              <li><a href="../system-development-automation-services-page/index.html">System Dev &amp; Automation</a></li>
+            </ul>
+          </li>
+          <li><a href="../blog/index.html">Blog</a></li>
+          <li><a href="index.html">Pricing</a></li>
+        </ul>
+      </nav>
+      <a href="../contact/index.html" class="header-cta">Get in touch</a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="document.getElementById('navMenu').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <h1>Choose Your <span class="gradient-text">Growth Plan</span></h1>
+  <p>Flexible pricing designed to scale with your brand. From launching your presence to full-scale digital dominance.</p>
+</section>
+
+<!-- ===== PRICING CARDS ===== -->
+<section class="pricing-section">
+  <div class="pricing-cards">
+
+    <!-- FREE -->
+    <div class="pricing-card">
+      <span class="card-tier">Starter</span>
+      <h3 class="card-name">Free</h3>
+      <div class="card-price"><span class="currency">₹</span>0 <span class="period">/ mo</span></div>
+      <p class="card-desc">Get started with the basics to establish your online presence.</p>
+      <ul class="card-features">
+        <li><span class="check">✓</span> Google Business Setup</li>
+        <li class="disabled"><span class="cross">–</span> Intro Video</li>
+        <li class="disabled"><span class="cross">–</span> Weekly Blog Posts</li>
+        <li class="disabled"><span class="cross">–</span> Weekly Videos</li>
+        <li class="disabled"><span class="cross">–</span> Custom Website</li>
+        <li class="disabled"><span class="cross">–</span> AI Avatar</li>
+      </ul>
+      <a href="../contact/index.html" class="card-btn">Get Started</a>
+    </div>
+
+    <!-- SILVER -->
+    <div class="pricing-card">
+      <span class="card-tier">Growth</span>
+      <h3 class="card-name">Silver</h3>
+      <div class="card-price"><span class="currency">₹</span>1,999 <span class="period">/ mo</span></div>
+      <p class="card-desc">Build momentum with content and video to engage your audience.</p>
+      <ul class="card-features">
+        <li><span class="check">✓</span> Google Business Setup</li>
+        <li><span class="check">✓</span> Intro Video</li>
+        <li><span class="check">✓</span> Weekly Blog Posts</li>
+        <li class="disabled"><span class="cross">–</span> Weekly Videos</li>
+        <li class="disabled"><span class="cross">–</span> Custom Website</li>
+        <li class="disabled"><span class="cross">–</span> AI Avatar</li>
+      </ul>
+      <a href="../contact/index.html" class="card-btn">Get Started</a>
+    </div>
+
+    <!-- GOLD -->
+    <div class="pricing-card featured">
+      <span class="card-tier">Scale</span>
+      <h3 class="card-name">Gold</h3>
+      <div class="card-price"><span class="currency">₹</span>5,999 <span class="period">/ mo</span></div>
+      <p class="card-desc">Full content engine with videos, blogs, and a custom website.</p>
+      <ul class="card-features">
+        <li><span class="check">✓</span> Google Business Setup</li>
+        <li><span class="check">✓</span> Intro Video</li>
+        <li><span class="check">✓</span> Weekly Blog Posts</li>
+        <li><span class="check">✓</span> 2 Weekly Videos</li>
+        <li><span class="check">✓</span> Custom Website</li>
+        <li class="disabled"><span class="cross">–</span> AI Avatar</li>
+      </ul>
+      <a href="../contact/index.html" class="card-btn">Get Started</a>
+    </div>
+
+    <!-- PLATINUM -->
+    <div class="pricing-card">
+      <span class="card-tier">Dominate</span>
+      <h3 class="card-name">Platinum</h3>
+      <div class="card-price"><span class="currency">₹</span>9,999 <span class="period">/ mo</span></div>
+      <p class="card-desc">Everything included plus an AI-powered digital avatar for your brand.</p>
+      <ul class="card-features">
+        <li><span class="check">✓</span> Google Business Setup</li>
+        <li><span class="check">✓</span> Intro Video</li>
+        <li><span class="check">✓</span> Weekly Blog Posts</li>
+        <li><span class="check">✓</span> 2 Weekly Videos</li>
+        <li><span class="check">✓</span> Custom Website</li>
+        <li><span class="check">✓</span> AI Avatar</li>
+      </ul>
+      <a href="../contact/index.html" class="card-btn">Get Started</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <div class="cta-box">
+    <h2>Ready to Grow Your Brand?</h2>
+    <p>Not sure which plan is right for you? Talk to our team and we'll help you find the perfect fit.</p>
+    <a href="../contact/index.html" class="cta-btn">Talk to Us →</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-copy">© 2025 MyBrandCanvas. All rights reserved.</div>
+    <ul class="footer-links">
+      <li><a href="../privacy-policy/index.html">Privacy Policy</a></li>
+      <li><a href="../terms-amp-conditions/index.html">Terms &amp; Conditions</a></li>
+      <li><a href="../contact/index.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
